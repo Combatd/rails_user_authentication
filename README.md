@@ -203,11 +203,11 @@ __Body__ lots of information, typically contains HTML to be rendered on a page
 
 Below is a diagram of a request-response cycle.
 
-![request-response](request_response.jpg)
+![request-response](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/rails/assets/request_response.jpg)
 
 In __Rails__ land, Rails comes with its own server. When this server receives an HTTP request, it sends it to the __Rails Router__. This router takes in the request and decides where to send it - which controller and which method inside of that controller. For example, a `GET /users` would typically call the `index` method inside of `users_controller.rb`. __A new instance of a controller is instantiated for every single request-response cycle. Once a cycle is complete, the instance is destroyed.__ Side note: naming conventions are extremely important for Rails to figure out where to send requests. Below is a diagram of a request-response cycle in Rails.
 
-![request-response-rails](request_response_rails.jpg)
+![request-response-rails](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/rails/assets/request_response_rails.jpg)
 
 
 ### QUESTION: How do all of the MVC components connect?
@@ -219,7 +219,7 @@ In __Rails__ land, Rails comes with its own server. When this server receives an
 
 The below diagram illustrates the connections between the MVC components. The next question also provides details with respect to creating each one of theses components.
 
-![mvc_connection](mvc_connection_updated.jpg)
+![mvc_connection](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/rails/assets/mvc_connection_updated.jpg)
 
 
 ### QUESTION: How do we systematically set up the controllers and views? What’s the best way to build out logic in views vs. controllers? I want a checklist of how to setup my rails application!
@@ -460,7 +460,7 @@ The below storage options carry data from the application to the browser.
 
 The below diagram illustrates how each of these storage options workd within Rails.
 
-![rails_info_storage](rails_info_storage.jpg)
+![rails_info_storage](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/rails/assets/rails_info_storage.jpg)
 
 
 ### QUESTION: Why would I nest a resource? How do I pass a foreign key into params if the resource is not nested?
