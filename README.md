@@ -1,4 +1,4 @@
-# Common User Auth Questions
+# Common User Auth Questions, by Liz Houle
 
 ### QUESTION: When do we use `before_action`?
 `before_action` is considered to be a ‘filter’ in Rails ([Action Controller Overview — Ruby on Rails Guides](https://guides.rubyonrails.org/action_controller_overview.html#filters)), and it is a method that is run before a controller action (e.g. index, create, update, etc.) in the controller in which it is called. One common example of this is to pass before_action a method that ensures a user is signed in before being able to update or create something (e.g. post, comment, etc.). In the below code, the `before_action` is calling a method that ensures no user is currently logged in when we make a request to create a new user. If a current user exists, the `require_no_user!` method (defined in application_controller.rb) will redirect to a different page, and will not allow a request for a new user to be completed.
@@ -495,7 +495,7 @@ This generates a `/posts/:post_id/comments` route. Requests for this route will 
 `/views/comments/new.html.erb`
 ```html
 <h1>New Comment</h1>
-<form class='form' action="<%= posts_url %>" method="post">
+<form class='form' action="<%= post_comments_url %>" method="post">
   <input
     type="hidden"
     name="authenticity_token"
@@ -520,7 +520,7 @@ class CommentsController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.post_id = comment_params
+    @comment.post_id = params[:post_id]
     if @comment.save
       redirect_to post_url(@comment.post_id)
     else
